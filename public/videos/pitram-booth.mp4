@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#0f0f11"/>
+  <circle cx="640" cy="360" r="48" fill="#27272a" stroke="#52525b" stroke-width="2"/>
+  <polygon points="632,344 656,360 632,376" fill="#f4f4f5"/>
+  <text x="640" y="460" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="20" font-weight="500" fill="#a1a1aa" text-anchor="middle">PITRAM Competition Presentation — Universiti Malaya</text>
+</svg>

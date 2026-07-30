@@ -1,0 +1,6 @@
+{
+  "name": "Personal Portfolio",
+  "description": "Personal portfolio website for an incoming Computer Science student at the University of Leeds.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

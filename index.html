@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Harith Nabil</title>
+    <meta name="description" content="Personal portfolio of Harith, a heading to the University of Leeds for BSc Computer Science." />
+    
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="Harith — Incoming Computer Science Student at University of Leeds" />
+    <meta property="og:description" content="Personal portfolio of Harith, heading to the University of Leeds for BSc Computer Science." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://harith.dev" />
+
+    <!-- Google Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+      /* Base CSS Reset */
+      *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        background-color: #111111;
+        color: #e5e5e5;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      body {
+        min-height: 100vh;
+        background-color: #111111;
+        color: #e5e5e5;
+        padding-top: 56px;
+        padding-bottom: 96px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      /* Layout Containers */
+      .container-wide {
+        width: 100%;
+        max-width: 860px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .container-narrow {
+        width: 100%;
+        max-width: 680px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* Typography */
+      h1, h2, h3 {
+        color: #ffffff;
+        font-weight: 600;
+        letter-spacing: -0.025em;
+      }
+
+      h1 {
+        font-size: 2rem;
+        line-height: 1.25;
+        margin-bottom: 20px;
+      }
+
+      h2 {
+        font-size: 1.25rem;
+        line-height: 1.4;
+        margin-bottom: 24px;
+      }
+
+      p {
+        color: #e5e5e5;
+        margin-bottom: 20px;
+        font-weight: 400;
+      }
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+
+      a {
+        color: #ffffff;
+        text-decoration: none;
+        transition: opacity 0.2s ease, text-decoration-color 0.2s ease;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      /* Sections Spacing */
+      section {
+        margin-bottom: 80px;
+      }
+
+      /* Photo Grid Header */
+      .photo-grid-wrapper {
+        margin-bottom: 64px;
+      }
+
+      @media (min-width: 769px) {
+        .photo-grid-wrapper {
+          margin-left: calc(50% - 430px);
+          margin-right: calc(50% - 430px);
+          width: 860px;
+          max-width: calc(100vw - 48px);
+        }
+      }
+
+      .photo-grid {
+        display: grid;
+        grid-template-columns: 1.25fr 1fr 0.95fr;
+        gap: 16px;
+        align-items: center;
+      }
+
+      .photo-card {
+        position: relative;
+        aspect-ratio: 3 / 4;
+        overflow: hidden;
+        border-radius: 14px;
+        border: 1px solid #222222;
+        background-color: #181818;
+      }
+
+      .photo-card:nth-child(3) {
+        aspect-ratio: 4 / 3;
+      }
+
+      .photo-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        border-radius: 14px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+
+      .photo-card:hover img {
+        opacity: 0.92;
+        transform: scale(1.02);
+      }
+
+      /* Intro Section */
+      .intro-section {
+        margin-bottom: 72px;
+      }
+
+      .intro-paragraph {
+        font-size: 1.125rem;
+        line-height: 1.6;
+        color: #e5e5e5;
+      }
+
+      /* Projects Section */
+      .projects-list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .project-card-link {
+        display: block;
+        text-decoration: none;
+      }
+
+      .project-card-link:hover {
+        text-decoration: none;
+      }
+
+      .project-card {
+        background-color: #161616;
+        border: 1px solid #222222;
+        border-radius: 14px;
+        padding: 20px 24px;
+        transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+      }
+
+      .project-card-link:hover .project-card {
+        background-color: #1a1a1a;
+        border-color: #333333;
+        transform: translateY(-2px);
+      }
+
+      .project-title {
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: #ffffff;
+        margin-bottom: 6px;
+      }
+
+      .project-description {
+        font-size: 0.9375rem;
+        color: #a3a3a3;
+        line-height: 1.5;
+        margin-bottom: 12px;
+      }
+
+      .project-link-text {
+        font-size: 0.8125rem;
+        color: #a3a3a3;
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: color 0.2s ease;
+      }
+
+      .project-card-link:hover .project-link-text {
+        color: #ffffff;
+      }
+
+      /* Media / Journey Section */
+      .media-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 36px;
+      }
+
+      .media-item {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .media-caption {
+        font-size: 0.9375rem;
+        color: #a3a3a3;
+        margin-bottom: 12px;
+      }
+
+      .media-video {
+        width: 100%;
+        border-radius: 14px;
+        border: 1px solid #222222;
+        background-color: #161616;
+        aspect-ratio: 16 / 9;
+        display: block;
+        object-fit: cover;
+      }
+
+      .media-video-portrait {
+        aspect-ratio: 3 / 4;
+      }
+
+      /* Footer */
+      footer {
+        padding-top: 64px;
+        padding-bottom: 32px;
+        text-align: center;
+        border-top: 1px solid #222222;
+        margin-top: 80px;
+      }
+
+      .footer-links {
+        font-size: 0.875rem;
+        color: #a3a3a3;
+        margin-bottom: 8px;
+      }
+
+      .footer-links a {
+        color: #a3a3a3;
+      }
+
+      .footer-links a:hover {
+        color: #ffffff;
+      }
+
+      .footer-dot {
+        margin: 0 8px;
+        color: #525252;
+      }
+
+      .footer-year {
+        font-size: 0.75rem;
+        color: #525252;
+      }
+
+      /* Intersection Observer Scroll Animations */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        will-change: opacity, transform;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Mobile Responsiveness */
+      @media (max-width: 768px) {
+        body {
+          padding-top: 32px;
+          padding-bottom: 64px;
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+
+        h1 {
+          font-size: 1.625rem;
+        }
+
+        .photo-grid {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+
+        .photo-grid-wrapper {
+          margin-left: 0;
+          margin-right: 0;
+          width: 100%;
+          margin-bottom: 48px;
+        }
+
+        section {
+          margin-bottom: 60px;
+        }
+
+        .project-card {
+          padding: 16px 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Main Portfolio Container -->
+    <main class="container-narrow">
+
+      <!-- Section 1: Intro -->
+      <section class="intro-section fade-in">
+        <h1>I'm Harith. Incoming Computer Science student at the University of Leeds.</h1>
+        <p class="intro-paragraph">
+          I taught myself to code, won a Silver Medal at a national innovation competition, and built real apps that solve real problems. I'm heading to Leeds this September to study Computer Science.
+        </p>
+      </section>
+
+      <!-- Header Photo Grid -->
+      <header class="container-wide photo-grid-wrapper fade-in">
+        <div class="photo-grid">
+          <div class="photo-card">
+            <img src="images/cocurricular-cert.jpg" alt="Receiving the Co-Curricular Excellence Award at Universiti Malaya" loading="lazy" />
+          </div>
+          <div class="photo-card">
+            <img src="images/spm-cert.jpg" alt="Celebrating straight A's in SPM national examination" loading="lazy" />
+          </div>
+          <div class="photo-card">
+            <img src="images/eureka-grant.jpg" alt="Winning the Eureka Innovation Competition project grant" loading="lazy" />
+          </div>
+        </div>
+      </header>
+
+      <!-- Section 2: About -->
+      <section class="about-section fade-in">
+        <h2>About</h2>
+        <p>
+          I grew up in Shah Alam, Selangor, and I got into tech because I loved creating tools from scratch that actually solve real problems.
+        </p>
+        <p>
+          During my Foundation in Physical Science at Universiti Malaya, I applied this mindset to build real software. I created TeleSearch, an AI web app streamlining property agents' workflows, and Q-Up, a QR-based digital queuing system tested live at the UM food court, which won a Silver Medal at the national innovation competition.
+        </p>
+        <p>
+          My expertise lies in full-stack web development and applying AI to practical bottlenecks. Beyond achieving straight A's (6A+, 3A) in my SPM, I was awarded the Co-Curricular Excellence Award at UM for my holistic involvement beyond academics.
+        </p>
+        <p>
+          I hold an unconditional offer to study BSc Computer Science at the University of Leeds. My goal in going to the UK is to immerse myself in a global Fintech hub, push past my comfort zone, and return ready to lead high impact digital initiatives.
+        </p>
+      </section>
+
+      <!-- Section 3: Projects -->
+      <section class="projects-section fade-in">
+        <h2>Projects</h2>
+        <div class="projects-list">
+
+          <a href="https://q-up-client.onrender.com/" target="_blank" rel="noopener noreferrer" class="project-card-link">
+            <article class="project-card">
+              <h3 class="project-title">Q-Up</h3>
+              <p class="project-description">
+                A digital QR queuing system. No app downloads, no accounts. Customers scan to join. Tested live at a university food court.
+              </p>
+              <span class="project-link-text">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+                q-up-client.onrender.com
+              </span>
+            </article>
+          </a>
+
+          <a href="https://github.com/harithnabilf/telesearch" target="_blank" rel="noopener noreferrer" class="project-card-link">
+            <article class="project-card">
+              <h3 class="project-title">TeleSearch</h3>
+              <p class="project-description">
+                An AI-powered search engine that extracts property listings from thousands of Telegram messages into a searchable database.
+              </p>
+              <span class="project-link-text">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+                github.com/harithnabilf/telesearch
+              </span>
+            </article>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- Section 4: Media / Journey -->
+      <section class="media-section fade-in">
+        <h2>In Action</h2>
+        <div class="media-stack">
+
+          <div class="media-item">
+            <p class="media-caption">Interviewing users about Q-Up at the UM food court</p>
+            <video src="videos/qup-interview.mp4" controls muted playsinline preload="metadata" class="media-video"></video>
+          </div>
+
+          <div class="media-item">
+            <p class="media-caption">Presenting Q-Up at the PITRAM national innovation competition</p>
+            <video src="videos/pitram-booth.mp4" controls muted playsinline preload="metadata" class="media-video media-video-portrait"></video>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Section 5: Footer -->
+      <footer class="fade-in">
+        <div class="footer-links">
+          <a href="mailto:harithnabilf@gmail.com">harithnabilf@gmail.com</a>
+        </div>
+        <div class="footer-year">2026</div>
+      </footer>
+
+    </main>
+
+    <!-- Scroll Animations & Media Fallback Handler -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // Intersection Observer for smooth fade-in
+        const observerOptions = {
+          root: null,
+          rootMargin: '0px 0px -40px 0px',
+          threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, observerOptions);
+
+        const fadeElements = document.querySelectorAll('.fade-in');
+        fadeElements.forEach(el => observer.observe(el));
+
+        // Graceful video fallback poster renderer if video playback source is unavailable
+        const videos = document.querySelectorAll('video');
+        videos.forEach(video => {
+          video.addEventListener('error', () => {
+            const canvas = document.createElement('canvas');
+            canvas.width = 1280;
+            canvas.height = 720;
+            const ctx = canvas.getContext('2d');
+            
+            // Background
+            ctx.fillStyle = '#161616';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Border / Grid
+            ctx.strokeStyle = '#222222';
+            ctx.lineWidth = 2;
+            ctx.strokeRect(20, 20, canvas.width - 40, canvas.height - 40);
+
+            // Play Icon
+            ctx.beginPath();
+            ctx.arc(canvas.width / 2, canvas.height / 2 - 20, 48, 0, Math.PI * 2);
+            ctx.fillStyle = '#222222';
+            ctx.fill();
+            ctx.strokeStyle = '#333333';
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(canvas.width / 2 - 12, canvas.height / 2 - 36);
+            ctx.lineTo(canvas.width / 2 + 20, canvas.height / 2 - 20);
+            ctx.lineTo(canvas.width / 2 - 12, canvas.height / 2 - 4);
+            ctx.closePath();
+            ctx.fillStyle = '#a3a3a3';
+            ctx.fill();
+
+            // Caption text from parent or video attribute
+            const captionEl = video.previousElementSibling;
+            const titleText = captionEl ? captionEl.textContent : 'Media Preview';
+
+            ctx.fillStyle = '#737373';
+            ctx.font = '500 24px -apple-system, BlinkMacSystemFont, "Inter", sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText(titleText, canvas.width / 2, canvas.height / 2 + 60);
+
+            video.poster = canvas.toDataURL('image/png');
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
+
+

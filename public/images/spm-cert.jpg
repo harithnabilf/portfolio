@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+    <rect width="800" height="600" fill="#18181b"/>
+    <!-- Subtle grid overlay -->
+    <defs>
+      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#27272a" stroke-width="1"/>
+      </pattern>
+      <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#27272a" stop-opacity="0.6"/>
+        <stop offset="100%" stop-color="#18181b" stop-opacity="0.8"/>
+      </linearGradient>
+    </defs>
+    <rect width="800" height="600" fill="url(#grid)" opacity="0.5"/>
+    <rect x="40" y="40" width="720" height="520" rx="16" fill="url(#grad)" stroke="#3f3f46" stroke-width="1.5"/>
+    
+    <!-- Badge -->
+    <rect x="80" y="80" width="160" height="32" rx="16" fill="#27272a" stroke="#52525b" stroke-width="1"/>
+    <text x="160" y="101" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="12" font-weight="600" fill="#a1a1aa" text-anchor="middle" letter-spacing="1">ACADEMIC</text>
+    
+    <!-- Main Title & Subtitle -->
+    <text x="80" y="280" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="28" font-weight="600" fill="#f4f4f5">SPM National Examination</text>
+    <text x="80" y="325" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="16" font-weight="400" fill="#a1a1aa">Straight A Grade Performance (6A+, 3A)</text>
+    
+    <!-- Decorative Icon / Frame -->
+    <circle cx="680" cy="460" r="40" fill="#27272a" stroke="#3f3f46" stroke-width="1.5"/>
+    <path d="M668 460 L676 468 L692 452" fill="none" stroke="#e4e4e7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
