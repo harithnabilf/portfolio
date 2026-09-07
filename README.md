@@ -20,6 +20,7 @@ A minimalist, high-performance personal portfolio website showcasing software pr
 
 - **Q-Up:** A real-time web-based virtual queue management system built with React, Node.js, Express, Socket.IO, and MongoDB. Awarded the Silver Medal at Pertandingan Inovasi Antara Asasi Malaysia (PITRAM) 2026.
 - **TeleSearch:** An AI-powered property search engine that parses and extracts structured real estate listings from Telegram chat channels using FastAPI, Telethon, and the Google Gemini API.
+- **Photron:** A 2-player local multiplayer arcade game built in C++ using the Simple and Fast Multimedia Library (SFML).
 
 ---
 

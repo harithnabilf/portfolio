@@ -1,16 +1,15 @@
 <!doctype html>
-<html lang="ms">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Harith Nabil | Portfolio Kejuruteraan Perisian UKM</title>
-    <meta name="description" content="Portfolio peribadi Harith Nabil, calon Sarjana Muda Kejuruteraan Perisian dengan Kepujian di Universiti Kebangsaan Malaysia." />
-    
+    <title>Harith Nabil | Portfolio</title>
+    <meta name="description" content="Personal portfolio of Harith Nabil, a software engineering student based in Malaysia." />
+
     <!-- Open Graph Metadata -->
-    <meta property="og:title" content="Harith Nabil | Calon Kejuruteraan Perisian UKM" />
-    <meta property="og:description" content="Portfolio peribadi Harith Nabil, calon Sarjana Muda Kejuruteraan Perisian dengan Kepujian di Universiti Kebangsaan Malaysia." />
+    <meta property="og:title" content="Harith Nabil | Portfolio" />
+    <meta property="og:description" content="Personal portfolio of Harith Nabil, a software engineering student based in Malaysia." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://harith.dev" />
 
     <!-- Google Font: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
     <style>
-      /* Base CSS Reset */
+      /* CSS Reset */
       *, *::before, *::after {
         box-sizing: border-box;
         margin: 0;
@@ -40,21 +39,11 @@
         min-height: 100vh;
         background-color: #111111;
         color: #e5e5e5;
-        padding-top: 56px;
-        padding-bottom: 96px;
-        padding-left: 20px;
-        padding-right: 20px;
+        padding: 72px 20px 96px;
       }
 
-      /* Layout Containers */
-      .container-wide {
-        width: 100%;
-        max-width: 860px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .container-narrow {
+      /* Container */
+      .container {
         width: 100%;
         max-width: 680px;
         margin-left: auto;
@@ -64,26 +53,35 @@
       /* Typography */
       h1, h2, h3 {
         color: #ffffff;
-        font-weight: 600;
         letter-spacing: -0.025em;
       }
 
       h1 {
-        font-size: 2rem;
+        font-size: 2.25rem;
+        font-weight: 600;
         line-height: 1.25;
+        margin-bottom: 12px;
+      }
+
+      .hero-subtext {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: #a3a3a3;
         margin-bottom: 20px;
       }
 
       h2 {
         font-size: 1.25rem;
+        font-weight: 600;
         line-height: 1.4;
-        margin-bottom: 24px;
+        margin-bottom: 20px;
       }
 
       p {
-        color: #e5e5e5;
-        margin-bottom: 20px;
-        font-weight: 400;
+        color: #d4d4d4;
+        margin-bottom: 18px;
+        font-size: 0.95rem;
+        line-height: 1.7;
       }
 
       p:last-child {
@@ -93,206 +91,176 @@
       a {
         color: #ffffff;
         text-decoration: none;
-        transition: opacity 0.2s ease, text-decoration-color 0.2s ease;
-      }
-
-      a:hover {
-        text-decoration: underline;
+        transition: opacity 0.2s ease, color 0.2s ease;
       }
 
       /* Sections Spacing */
       section {
-        margin-bottom: 80px;
-      }
-
-      /* Photo Grid Header */
-      .photo-grid-wrapper {
         margin-bottom: 64px;
       }
 
-      @media (min-width: 769px) {
-        .photo-grid-wrapper {
-          margin-left: calc(50% - 430px);
-          margin-right: calc(50% - 430px);
-          width: 860px;
-          max-width: calc(100vw - 48px);
-        }
+      /* Hero / Header */
+      .hero-section {
+        margin-bottom: 56px;
       }
 
-      .photo-grid {
-        display: grid;
-        grid-template-columns: 1.25fr 1fr 0.95fr;
-        gap: 16px;
+      .social-links {
+        display: flex;
         align-items: center;
+        gap: 12px;
+        margin-top: 20px;
       }
 
-      .photo-card {
-        position: relative;
-        aspect-ratio: 3 / 4;
-        overflow: hidden;
-        border-radius: 14px;
-        border: 1px solid #222222;
-        background-color: #181818;
-      }
-
-      .photo-card:nth-child(3) {
-        aspect-ratio: 4 / 3;
-      }
-
-      .photo-card img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-        border-radius: 14px;
-        transition: transform 0.3s ease, opacity 0.3s ease;
-      }
-
-      .photo-card:hover img {
-        opacity: 0.92;
-        transform: scale(1.02);
-      }
-
-      /* Intro Section */
-      .intro-section {
-        margin-bottom: 72px;
-      }
-
-      .intro-paragraph {
-        font-size: 1.125rem;
-        line-height: 1.6;
+      .social-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background-color: #1a1a1a;
         color: #e5e5e5;
+        border: 1px solid #262626;
+        border-radius: 8px;
+        padding: 8px 14px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+      }
+
+      .social-btn:hover {
+        background-color: #222222;
+        border-color: #383838;
+        color: #ffffff;
       }
 
       /* Projects Section */
       .projects-list {
         display: flex;
         flex-direction: column;
-        gap: 16px;
-      }
-
-      .project-card-link {
-        display: block;
-        text-decoration: none;
-      }
-
-      .project-card-link:hover {
-        text-decoration: none;
+        gap: 20px;
       }
 
       .project-card {
         background-color: #161616;
         border: 1px solid #222222;
         border-radius: 14px;
-        padding: 20px 24px;
-        transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+        padding: 24px;
+        transition: border-color 0.2s ease, transform 0.2s ease;
       }
 
-      .project-card-link:hover .project-card {
-        background-color: #1a1a1a;
+      .project-card:hover {
         border-color: #333333;
-        transform: translateY(-2px);
+      }
+
+      .project-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 8px;
       }
 
       .project-title {
-        font-size: 1.125rem;
+        font-size: 1.15rem;
         font-weight: 600;
         color: #ffffff;
-        margin-bottom: 6px;
+      }
+
+      .tech-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 14px;
+      }
+
+      .tech-tag {
+        font-size: 0.75rem;
+        color: #a3a3a3;
+        background-color: #202020;
+        border: 1px solid #2a2a2a;
+        border-radius: 6px;
+        padding: 2px 8px;
       }
 
       .project-description {
         font-size: 0.9375rem;
         color: #a3a3a3;
-        line-height: 1.5;
-        margin-bottom: 12px;
+        line-height: 1.6;
+        margin-bottom: 16px;
       }
 
-      .project-link-text {
-        font-size: 0.8125rem;
-        color: #a3a3a3;
-        font-weight: 500;
+      .project-links {
+        display: flex;
+        gap: 18px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .project-link {
         display: inline-flex;
         align-items: center;
         gap: 6px;
+        font-size: 0.8125rem;
+        color: #d4d4d4;
+        font-weight: 500;
         transition: color 0.2s ease;
       }
 
-      .project-card-link:hover .project-link-text {
+      .project-link:hover {
         color: #ffffff;
       }
 
-      /* Media / Journey Section */
-      .media-stack {
-        display: flex;
-        flex-direction: column;
-        gap: 36px;
+      .project-link svg {
+        flex-shrink: 0;
       }
 
-      .media-item {
-        display: flex;
-        flex-direction: column;
+      /* Project Video Embed */
+      .project-video-wrapper {
+        margin-top: 18px;
+        border-top: 1px solid #222222;
+        padding-top: 16px;
       }
 
-      .media-caption {
-        font-size: 0.9375rem;
-        color: #a3a3a3;
-        margin-bottom: 12px;
+      .project-video-caption {
+        font-size: 0.8125rem;
+        color: #737373;
+        margin-bottom: 10px;
       }
 
-      .media-video {
+      .project-video {
         width: 100%;
-        border-radius: 14px;
-        border: 1px solid #222222;
-        background-color: #161616;
+        border-radius: 10px;
+        border: 1px solid #262626;
+        background-color: #000000;
         aspect-ratio: 16 / 9;
         display: block;
         object-fit: cover;
       }
 
-      .media-video-portrait {
-        aspect-ratio: 3 / 4;
-      }
-
       /* Footer */
       footer {
-        padding-top: 64px;
-        padding-bottom: 32px;
-        text-align: center;
+        padding-top: 48px;
         border-top: 1px solid #222222;
-        margin-top: 80px;
-      }
-
-      .footer-links {
-        font-size: 0.875rem;
-        color: #a3a3a3;
-        margin-bottom: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.8125rem;
+        color: #737373;
+        margin-top: 72px;
       }
 
       .footer-links a {
-        color: #a3a3a3;
+        color: #737373;
       }
 
       .footer-links a:hover {
         color: #ffffff;
       }
 
-      .footer-dot {
-        margin: 0 8px;
-        color: #525252;
-      }
-
-      .footer-year {
-        font-size: 0.75rem;
-        color: #525252;
-      }
-
-      /* Intersection Observer Scroll Animations */
+      /* Fade-in Animation */
       .fade-in {
         opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        will-change: opacity, transform;
+        transform: translateY(16px);
+        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
       }
 
       .fade-in.visible {
@@ -300,154 +268,179 @@
         transform: translateY(0);
       }
 
-      /* Mobile Responsiveness */
-      @media (max-width: 768px) {
+      @media (prefers-reduced-motion: reduce) {
+        .fade-in {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+      }
+
+      /* Mobile */
+      @media (max-width: 640px) {
         body {
-          padding-top: 32px;
-          padding-bottom: 64px;
-          padding-left: 16px;
-          padding-right: 16px;
+          padding: 40px 16px 64px;
         }
 
         h1 {
-          font-size: 1.625rem;
-        }
-
-        .photo-grid {
-          grid-template-columns: 1fr;
-          gap: 12px;
-        }
-
-        .photo-grid-wrapper {
-          margin-left: 0;
-          margin-right: 0;
-          width: 100%;
-          margin-bottom: 48px;
-        }
-
-        section {
-          margin-bottom: 60px;
+          font-size: 1.85rem;
         }
 
         .project-card {
-          padding: 16px 18px;
+          padding: 18px;
+        }
+
+        section {
+          margin-bottom: 48px;
+        }
+
+        footer {
+          flex-direction: column;
+          gap: 12px;
+          align-items: flex-start;
         }
       }
     </style>
   </head>
   <body>
-    <!-- Main Portfolio Container -->
-    <main class="container-narrow">
+    <main class="container">
 
-      <!-- Section 1: Intro -->
-      <section class="intro-section fade-in">
-        <h1>Saya, Harith Nabil bin Farouk, calon rayuan bagi kemasukan ke Sarjana Muda Kejuruteraan Perisian di Universiti Kebangsaan Malaysia.</h1>
-      </section>
-
-      <!-- Header Photo Grid -->
-      <header class="container-wide photo-grid-wrapper fade-in">
-        <div class="photo-grid">
-          <div class="photo-card">
-            <img src="images/cocurricular-cert.jpg" alt="Penerima Anugerah Kecemerlangan Kokurikulum di Universiti Malaya" loading="lazy" />
-          </div>
-          <div class="photo-card">
-            <img src="images/spm-cert.jpg" alt="Slip keputusan SPM 6A+ 3A" loading="lazy" />
-          </div>
-          <div class="photo-card">
-            <img src="images/eureka-grant.jpg" alt="Penerima geran projek Pertandingan Inovasi Eureka" loading="lazy" />
-          </div>
+      <!-- Hero / Header -->
+      <section class="hero-section fade-in">
+        <h1>Aspiring Software Engineer</h1>
+        <p class="hero-subtext">
+          Software Engineering Student. Passionate about creating engaging digital experiences. Based in Malaysia.
+        </p>
+        <div class="social-links">
+          <a href="https://github.com/harithnabilf" target="_blank" rel="noopener noreferrer" class="social-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+            </svg>
+            GitHub
+          </a>
         </div>
-      </header>
+      </section>
 
-      <!-- Section 2: About -->
+      <!-- About Me Section -->
       <section class="about-section fade-in">
-        <h2>Tentang Saya</h2>
+        <h2>About Me</h2>
         <p>
-          Saya berasal dari Shah Alam, Selangor. Minat saya dalam bidang komputer bermula sejak zaman sekolah apabila saya kerap mencuba idea sendiri dan membina laman web kecil.
+          I got into coding because I wanted to build solutions to problems I saw around me. After seeing how much repetitive manual work people often deal with in daily tasks, I realized so much of it could be solved through tech and began experimenting with code to automate those workflows. Seeing an idea turn into working software that genuinely saved hours of time sparked an obsession with building things from scratch.
         </p>
         <p>
-          Semasa di Pusat Asasi Sains Universiti Malaya (PASUM), saya mula membina projek perisian yang lebih praktikal. Saya menghasilkan TeleSearch untuk mengautomasikan carian unit sewa bagi ejen hartanah daripada ribuan mesej Telegram. Seterusnya, saya membangunkan Q-Up, sistem giliran digital berasaskan kod QR. Kami bawa sistem ini dan uji terus bersama pelanggan di kafetaria UM sebelum membawanya ke Pertandingan Inovasi Antara Asasi Malaysia (PITRAM 2026) dan memenangi Pingat Perak.
+          Right now, I'm a software engineering student based in Malaysia. Most of my energy goes into building practical web applications and taking them into the real world. Recently, I built Q-Up, a virtual queuing app that eliminates physical line congestion. We tested it live with students and vendors in the university cafeteria, and went on to win a silver medal at the national PITRAM 2026 innovation competition.
         </p>
         <p>
-          Kemahiran utama saya merangkumi pembangunan web full-stack menggunakan React, Node.js, Express, dan MongoDB, serta integrasi API seperti Google Gemini. Di samping menumpukan perhatian pada projek teknikal, saya memperoleh keputusan SPM 6A+ 3A dan dianugerahkan Anugerah Kecemerlangan Kokurikulum di UM.
-        </p>
-        <p>
-          Saya berhasrat menyambung pengajian dalam jurusan Kejuruteraan Perisian di UKM menerusi Trek Pembangunan Sistem Maklumat. Saya ingin mendalami reka bentuk seni bina perisian berskala besar dan belajar daripada pensyarah serta pakar industri agar dapat membina sistem maklumat yang mantap untuk kegunaan masyarakat.
+          I really love the front-end side of development. I have a strong appreciation for clean, minimalist design where every element has a clear purpose and nothing feels cluttered. There is something deeply satisfying about crafting pixel-perfect layouts, stripping away unnecessary visual noise, and designing simple interfaces that just work.
         </p>
       </section>
 
-      <!-- Section 3: Projects -->
+      <!-- Projects Section -->
       <section class="projects-section fade-in">
-        <h2>Projek</h2>
+        <h2>Projects</h2>
         <div class="projects-list">
 
-          <a href="https://q-up-client.onrender.com/" target="_blank" rel="noopener noreferrer" class="project-card-link">
-            <article class="project-card">
+          <!-- Project 1: Q-Up -->
+          <article class="project-card">
+            <div class="project-header">
               <h3 class="project-title">Q-Up</h3>
-              <p class="project-description">
-                Sistem pengurusan giliran maya masa nyata menggunakan WebSockets dan kod QR. Pelanggan mengimbas kod di kaunter untuk memantau giliran terus di telefon pintar, manakala staf menguruskan panggilan nombor melalui papan pemuka admin.
-              </p>
-              <span class="project-link-text">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+            </div>
+            <div class="tech-tags">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">Express</span>
+              <span class="tech-tag">Socket.IO</span>
+              <span class="tech-tag">MongoDB</span>
+            </div>
+            <p class="project-description">
+              A real-time virtual queue management system designed to eliminate physical ticket dispensers and crowded waiting lines. Customers scan a counter QR code to join the line and monitor their number live on their phones, while vendors call and manage tickets through an administrative dashboard.
+            </p>
+            <div class="project-links">
+              <a href="https://q-up-client.onrender.com/" target="_blank" rel="noopener noreferrer" class="project-link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
                 </svg>
-                q-up-client.onrender.com
-              </span>
-            </article>
-          </a>
+                Live Demo
+              </a>
+              <a href="https://github.com/harithnabilf/q-up-app" target="_blank" rel="noopener noreferrer" class="project-link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+                Source Code
+              </a>
+            </div>
 
-          <a href="https://github.com/harithnabilf/telesearch" target="_blank" rel="noopener noreferrer" class="project-card-link">
-            <article class="project-card">
+            <div class="project-video-wrapper">
+              <p class="project-video-caption">Testing Q-Up with users at the Universiti Malaya cafeteria</p>
+              <video src="videos/qup-interview.mp4" controls preload="metadata" playsinline class="project-video"></video>
+            </div>
+          </article>
+
+          <!-- Project 2: TeleSearch -->
+          <article class="project-card">
+            <div class="project-header">
               <h3 class="project-title">TeleSearch</h3>
-              <p class="project-description">
-                Aplikasi carian senarai hartanah pintar yang membaca mesej teks dalam kumpulan Telegram, memproses butiran rumah secara automatik menggunakan model Gemini AI, dan memaparkan hasil carian berstruktur pada papan pemuka web setempat.
-              </p>
-              <span class="project-link-text">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+            </div>
+            <div class="tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Telethon</span>
+              <span class="tech-tag">Google Gemini API</span>
+              <span class="tech-tag">FastAPI</span>
+            </div>
+            <p class="project-description">
+              An automated property search tool that connects to Telegram rental channels, parses unstructured listings into structured fields (rental price, location, deposit, availability) using Google Gemini AI, and displays the queryable results on a clean local web dashboard.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/harithnabilf/telesearch" target="_blank" rel="noopener noreferrer" class="project-link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                 </svg>
-                github.com/harithnabilf/telesearch
-              </span>
-            </article>
-          </a>
+                Source Code
+              </a>
+            </div>
+          </article>
+
+          <!-- Project 3: Photron -->
+          <article class="project-card">
+            <div class="project-header">
+              <h3 class="project-title">Photron</h3>
+            </div>
+            <div class="tech-tags">
+              <span class="tech-tag">C++</span>
+              <span class="tech-tag">SFML</span>
+              <span class="tech-tag">Game Development</span>
+            </div>
+            <p class="project-description">
+              A 2-player local arcade game inspired by Tron light cycles. Built in C++ using the Simple and Fast Multimedia Library (SFML), featuring collision detection, trail rendering, and responsive keyboard controls. Developed as a course project during foundation studies at Universiti Malaya.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/harithnabilf/programming-1" target="_blank" rel="noopener noreferrer" class="project-link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+                Source Code
+              </a>
+            </div>
+          </article>
 
         </div>
       </section>
 
-      <!-- Section 4: Media / Journey -->
-      <section class="media-section fade-in">
-        <h2>Rakaman Lapangan</h2>
-        <div class="media-stack">
-
-          <div class="media-item">
-            <p class="media-caption">Sesi uji lari sistem dan temu bual pengguna Q-Up di kafetaria Universiti Malaya</p>
-            <video src="videos/qup-interview.mp4" controls muted playsinline preload="metadata" class="media-video"></video>
-          </div>
-
-          <div class="media-item">
-            <p class="media-caption">Pembentangan projek Q-Up di reruai pertandingan inovasi PITRAM 2026</p>
-            <video src="videos/pitram-booth.mp4" controls muted playsinline preload="metadata" class="media-video media-video-portrait"></video>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- Section 5: Footer -->
+      <!-- Footer -->
       <footer class="fade-in">
         <div class="footer-links">
-          <a href="mailto:harithnabilf@gmail.com">harithnabilf@gmail.com</a>
+          <a href="https://github.com/harithnabilf" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
-        <div class="footer-year">2026</div>
+        <div class="footer-year">© 2026 Harith Nabil</div>
       </footer>
 
     </main>
 
-    <!-- Scroll Animations & Media Fallback Handler -->
+    <!-- Scroll Fade-in -->
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-        // Intersection Observer for smooth fade-in
         const observerOptions = {
           root: null,
           rootMargin: '0px 0px -40px 0px',
@@ -463,58 +456,8 @@
           });
         }, observerOptions);
 
-        const fadeElements = document.querySelectorAll('.fade-in');
-        fadeElements.forEach(el => observer.observe(el));
-
-        // Graceful video fallback poster renderer if video playback source is unavailable
-        const videos = document.querySelectorAll('video');
-        videos.forEach(video => {
-          video.addEventListener('error', () => {
-            const canvas = document.createElement('canvas');
-            canvas.width = 1280;
-            canvas.height = 720;
-            const ctx = canvas.getContext('2d');
-            
-            // Background
-            ctx.fillStyle = '#161616';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            // Border / Grid
-            ctx.strokeStyle = '#222222';
-            ctx.lineWidth = 2;
-            ctx.strokeRect(20, 20, canvas.width - 40, canvas.height - 40);
-
-            // Play Icon
-            ctx.beginPath();
-            ctx.arc(canvas.width / 2, canvas.height / 2 - 20, 48, 0, Math.PI * 2);
-            ctx.fillStyle = '#222222';
-            ctx.fill();
-            ctx.strokeStyle = '#333333';
-            ctx.stroke();
-
-            ctx.beginPath();
-            ctx.moveTo(canvas.width / 2 - 12, canvas.height / 2 - 36);
-            ctx.lineTo(canvas.width / 2 + 20, canvas.height / 2 - 20);
-            ctx.lineTo(canvas.width / 2 - 12, canvas.height / 2 - 4);
-            ctx.closePath();
-            ctx.fillStyle = '#a3a3a3';
-            ctx.fill();
-
-            // Caption text from parent or video attribute
-            const captionEl = video.previousElementSibling;
-            const titleText = captionEl ? captionEl.textContent : 'Media Preview';
-
-            ctx.fillStyle = '#737373';
-            ctx.font = '500 24px -apple-system, BlinkMacSystemFont, "Inter", sans-serif';
-            ctx.textAlign = 'center';
-            ctx.fillText(titleText, canvas.width / 2, canvas.height / 2 + 60);
-
-            video.poster = canvas.toDataURL('image/png');
-          });
-        });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
       });
     </script>
   </body>
 </html>
-
-
