@@ -1,6 +1,6 @@
 {
   "name": "Personal Portfolio",
-  "description": "Personal portfolio website for an incoming Computer Science student at the University of Leeds.",
+  "description": "Laman web portfolio peribadi Harith Nabil untuk permohonan jurusan Kejuruteraan Perisian di Universiti Kebangsaan Malaysia (UKM).",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
